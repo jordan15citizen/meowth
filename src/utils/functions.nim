@@ -33,7 +33,7 @@ proc pushToRemote*(commitMsg: string) =
     scs "All actions executed successfully!"
 
 proc syncRepo*() =
-    let syncBranchName = runcmd("git branch --show-current", "Could not get current branch main")
+    let syncBranchName = runcmd("git branch --show-current", "Could not get current branch name")
 
     let puller = readInput("Use GitHub CLI or Git?")
     case puller
@@ -45,6 +45,23 @@ proc syncRepo*() =
         prt "Syncing repository with Git ..."
         discard runcmd("git pull origin {syncBranchName} --rebase", "Sync failed using Git!")
         scs "Synced repository from GitHub CLI!"
+
+proc payday*() =
+    let  
+        osVersion = runcmd("getprop ro.build.version.release", "not android device")
+        osArch = runcmd("getprop ro.product.cpu.abi", "not android device")
+        sdkVer = runcmd("getprop ro.build.version.sdk", "not android device")
+        kernelVersion = runcmd("uname -m", "not android device")
+        CPU = runcmd("getprop ro.soc.model", "cant get cpu")
+
+
+    prt fmt"""OS Version: {osVersion}
+    {BLUE}*{RST} OS Architecture: {osArch}
+    {BLUE}*{RST} OS SDK: {sdkVer}
+    {BLUE}*{RST} Kernel Version: {kernelVersion}
+    {BLUE}*{RST} CPU: {CPU}"""
+
+    prt "I'd win.French fries are good."
 
 proc displayHelp*() =
     prt "Meowth - The Git Assistant"

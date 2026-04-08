@@ -19,6 +19,11 @@ import utils/
 
 let args = commandLineParams()
 
+if args.len < 1 or args[0].isEmptyOrWhitespace():
+  warn "no command provided!"
+  displayHelp()
+  quit(0)
+
 case args[0]
 of "push", "p":
   if args.len < 1 or args[1].isEmptyOrWhitespace():
@@ -34,6 +39,8 @@ of "watch", "w":
 
 of "help", "--help":
   displayHelp()
+of "payday":
+  payday()
 
 else:
   err fmt"""Invalid command {args[0]}.

@@ -26,11 +26,11 @@ const RST* = ansiResetCode
 # ---------------------------------
 
 proc err*(errMsg: string) =
-    echo fmt"{RED}!{RST} {errMsg}"
+    stderr.writeLine fmt"{RED}✖{RST} {errMsg}"
     quit(1)
 
 proc warn*(warnMsg: string) =
-    echo fmt"{YLW}!{RST} {warnMsg}"
+    stderr.writeLine fmt"{YLW}!{RST} {warnMsg}"
 
 proc readInput*(writeMsg: string): string =
     stdout.write fmt"{BLUE}?{RST} {writeMsg}"
@@ -49,5 +49,5 @@ proc runcmd*(cmdStr: string, errStr: string): string =
     
     return output
 
-proc prt*(actionMsg: string) = 
-    echo fmt"{BLUE}*{RST} {actionMsg}"
+proc prt*(printMsg: string) = 
+    echo fmt"{BLUE}*{RST} {printMsg}"
