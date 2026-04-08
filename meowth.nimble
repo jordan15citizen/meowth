@@ -2,7 +2,7 @@
 # - Package Information
 # ---------------------------------
 
-version       = "0.1.1"
+version       = "0.1.15"
 author        = "jordan15citizen"
 description   = "Git helper for common git usage"
 license       = "MIT"

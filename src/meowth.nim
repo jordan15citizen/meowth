@@ -20,15 +20,14 @@ import utils/
 let args = commandLineParams()
 
 if args.len <= 0:
-  warn "No command provided!"
+  warn "No command provided"
   displayHelp()
   quit(0)
 
 case args[0]
 of "push", "p":
-  if args.len < 1 or args[1].isEmptyOrWhitespace():
-    err "Commit message cannot be empty."
-  
+  if args.len < 2 or args[1].isEmptyOrWhitespace():
+    err "Cannot commit without a message!"
   pushToRemote(args[1])
 
 of "pull", "sync", "s":
