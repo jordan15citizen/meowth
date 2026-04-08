@@ -19,7 +19,7 @@ import utils/
 
 let args = commandLineParams()
 
-if args.len < 1 or args[0].isEmptyOrWhitespace():
+if args.len < 0 or args[0].isEmptyOrWhitespace():
   warn "no command provided!"
   displayHelp()
   quit(0)
