@@ -69,14 +69,19 @@ proc displayHelp*() =
     echo ""
 
     echo "Usage: meowth <command> <args>"
+    echo ""
 
-    echo "push <commitMsg>"
+    echo "push <commitMsg>:"
     prt "A push to remote."
     prt "Default remote is origin."
     echo ""
 
     echo "pull | sync:"
     prt "Sync or pull changes from remote."
+    echo ""
+
+    echo "watch:"
+    prt "Watch your GitHub Actions from the terminal."
 
 proc watchActions*() =
     discard runcmd("gh run watch", "Package gh not installed")

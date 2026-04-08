@@ -2,7 +2,7 @@
 # - Package Information
 # ---------------------------------
 
-version       = "0.1.0"
+version       = "0.1.1"
 author        = "jordan15citizen"
 description   = "Git helper for common git usage"
 license       = "MIT"
@@ -15,7 +15,7 @@ bin           = @["meowth"]
 
 task releaseBuild, "Build release binaries":
     exec "nim c -d:Release --opt:speed --passL:-s src/meowth.nim"
-    exec "MV src/meowth bin/"
+    exec "mv src/meowth bin/"
 
 # ---------------------------------
 # - Dependencies
