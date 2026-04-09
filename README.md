@@ -16,7 +16,7 @@ Clone the URL with GitHub CLI or git. then:
 * Build with:
 ```bash
 nimble releaseBuild
-ˋˋˋ
+```
 # Usage
 You can use **Meowth** to **easily** push to GitHub.
 You can **watch** GitHub Actions and **sync** forks.
