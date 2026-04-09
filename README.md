@@ -22,4 +22,4 @@ You can **watch** GitHub Actions and **sync** forks.
 It has **shortcuts** for most **command**, being very **modular**
 # License
 This is **free software**, you can do whatever. 
-Check out the **license** [here][LICENSE] 
+Check out the **license** [here](LICENSE])
