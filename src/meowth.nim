@@ -11,6 +11,7 @@ import std/[
 
 import utils/
   utils,
+  strutils,
   utils/functions
 
 # ---------------------------------
@@ -46,7 +47,7 @@ of "--socrates":
   prt "If using open-source software was your power, what are you without it?"
   let linuxOverEverything = readInput("What is a mouse? Is it XFCE4? No MATE, it's a GNOME isn't it? Well i'm eating cinnamon right now : ")
   prt fmt"""Answer checking ...
-  A mouse is a {linuxOverEverything}"""
+  A mouse is a {linuxOverEverything}""".unindent()
 
 else:
   err fmt"""Invalid command {args[0]}!

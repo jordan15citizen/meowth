@@ -4,7 +4,8 @@
 # ---------------------------------
 
 import std/[
-    strformat
+    strformat,
+    strutils
 ]
 
 import utils
@@ -18,17 +19,17 @@ proc pushToRemote*(commitMsg: string) =
     
     prt "Adding changes ..."
     discard runcmd("git add .", fmt"""Failed to add files.
-      └── {GRN}Hint:{RST} Did you initialize git?""")
+      └── {GRN}Hint:{RST} Did you initialize git?""".unindent())
     
     prt "Committing changes ..."
     discard runcmd(fmt"""git commit -m "{commitMsg}" """, fmt"""Failed to commit files.
       └── {GRN}Hint:{RST} Did you add a remote?
-          {GRN}Hint:{RST} Are you authenticated?""")
+          {GRN}Hint:{RST} Are you authenticated?""".unindent())
 
     prt "Pushing to remote ..."
     discard runcmd(fmt"git push origin {branchName}", fmt"""Failed to push changes!
       └── {GRN}Hint:{RST} Are you synced to the remote?
-          {GRN}Hint:{RST} Did you add a remote?""")
+          {GRN}Hint:{RST} Did you add a remote?""".unindent())
 
     scs "All actions executed successfully!"
 
