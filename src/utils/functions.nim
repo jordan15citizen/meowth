@@ -21,12 +21,12 @@ proc pushToRemote*(commitMsg: string) =
     {GRN}Hint:{RST} Did you initialize git?""")
     
     prt "Committing changes ..."
-    discard runcmd(fmt"""git commit -m "{commitMsg}" """, """Failed to commit files.
+    discard runcmd(fmt"""git commit -m "{commitMsg}" """, fmt"""Failed to commit files.
     {GRN}Hint:{RST} Did you add a remote?
     {GRN}Hint:{RST} Are you authenticated?""")
 
     prt "Pushing to remote ..."
-    discard runcmd(fmt"git push origin {branchName}", """Failed to push changes!
+    discard runcmd(fmt"git push origin {branchName}", fmt"""Failed to push changes!
     {GRN}Hint:{RST} Are you synced to the remote?
     {GRN}Hint:{RST} Did you add a remote?""")
 
