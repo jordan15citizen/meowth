@@ -4,16 +4,17 @@ It was created so you can quickly **push changes**. Being written in **Nim**, it
 There is a **payday reference** somewhere, you must find it out yourself.
 # Build
 Build instructions:
-ˋˋˋbash
+```bash
 sudo apt install nim
+```
 Or, if you are in **Termux**:
-ˋˋˋbash
+```bash
 apt install nim
-ˋˋˋ
+```
 Clone the URL with GitHub CLI or git. then:
 * Move into the **cloned folder**
-* Build with:e
-ˋˋˋbash
+* Build with:
+```bash
 nimble releaseBuild
 ˋˋˋ
 # Usage
